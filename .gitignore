@@ -40,5 +40,8 @@ luac.out
 *.x86_64
 *.hex
 
+# OS
+.DS_Store
+
 
 plugin/packer_compiled.lua
