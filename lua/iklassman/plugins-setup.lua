@@ -130,6 +130,8 @@ return packer.startup(function(use)
 
   use("codegik/nvim-unused")
 
+  use("duane9/nvim-rg")
+
   if packer_bootstrap then
     require("packer").sync()
   end
