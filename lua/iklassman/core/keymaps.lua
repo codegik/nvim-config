@@ -38,7 +38,7 @@ keymap.set("n", "<leader>=", ":NvimTreeResize +5<CR>") --  go to previous buffer
 keymap.set("n", "<leader>-", ":NvimTreeResize -5<CR>") --  go to previous buffer
 
 -- set line wrap
-keymap.set("n", "<leader>w", ":set wrap!<CR>") --  go to previous buffer
+keymap.set("n", "<leader>w", ":set wrap!<CR>")
 
 -- visual mode
 keymap.set("v", ">", ">gv") -- don't leave visual mode after identing

@@ -49,9 +49,6 @@ return packer.startup(function(use)
   -- file explorer
   use("nvim-tree/nvim-tree.lua")
 
-  -- vs-code like icons
-  -- use("nvim-tree/nvim-web-devicons")
-
   -- statusline
   use("nvim-lualine/lualine.nvim")
 
@@ -85,11 +82,11 @@ return packer.startup(function(use)
       { "nvim-treesitter/nvim-treesitter" },
     },
   }) -- enhanced lsp uis
-  use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
-  use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+  -- use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
+  -- use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
   -- formatting & linting
-  use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
+  -- use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
   use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
   -- treesitter configuration
@@ -118,19 +115,9 @@ return packer.startup(function(use)
     end,
   })
 
-  -- use({
-  --  "ray-x/navigator.lua",
-  --  requires = {
-  --    { "ray-x/guihua.lua", run = "cd lua/fzy && make" },
-  --    { "neovim/nvim-lspconfig" },
-  --  },
-  --})
-
   use("mfussenegger/nvim-jdtls")
 
   use("codegik/nvim-unused")
-
-  use("duane9/nvim-rg")
 
   if packer_bootstrap then
     require("packer").sync()

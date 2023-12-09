@@ -14,4 +14,6 @@ require("iklassman.plugins.lsp.null-ls")
 require("iklassman.plugins.autopairs")
 require("iklassman.plugins.treesitter")
 require("iklassman.plugins.gitsigns")
+require("iklassman.plugins.nvim-jdtls")
 require("nvim-unused")
+
