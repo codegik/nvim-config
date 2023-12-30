@@ -22,6 +22,7 @@ telescope.setup({
       },
     },
     file_ignore_patterns = { "node_modules", "target", ".git", "build" },
+    path_display = { "smart" },
   },
 })
 
