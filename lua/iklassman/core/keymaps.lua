@@ -26,13 +26,6 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
-keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
-
-keymap.set("n", "<leader>bb", ":bprev<CR>") --  go to previous buffer
-keymap.set("n", "<leader>bd", ":bnext<CR>:bd #<CR>") --  go to previous buffer
 keymap.set("n", "<leader>md", ":MarkdownPreviewToggle<CR>") --  go to previous buffer
 keymap.set("n", "<leader>=", ":NvimTreeResize +5<CR>") --  go to previous buffer
 keymap.set("n", "<leader>-", ":NvimTreeResize -5<CR>") --  go to previous buffer
@@ -77,3 +70,45 @@ keymap.set("t", "<C-h>", "<C-\\><C-N><C-w>h")
 keymap.set("t", "<C-j>", "<C-\\><C-N><C-w>j")
 keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k")
 keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l")
+
+
+
+-- Tab Bar
+
+-- Move to previous/next
+keymap.set('n', '<leader>h', '<Cmd>BufferPrevious<CR>')
+keymap.set('n', '<leader>l', '<Cmd>BufferNext<CR>')
+-- Re-order to previous/next
+keymap.set('n', '<leader>j', '<Cmd>BufferMovePrevious<CR>')
+keymap.set('n', '<leader>k', '<Cmd>BufferMoveNext<CR>')
+-- Goto buffer in position...
+keymap.set('n', '<leader>1', '<Cmd>BufferGoto 1<CR>')
+keymap.set('n', '<leader>2', '<Cmd>BufferGoto 2<CR>')
+keymap.set('n', '<leader>3', '<Cmd>BufferGoto 3<CR>')
+keymap.set('n', '<leader>4', '<Cmd>BufferGoto 4<CR>')
+keymap.set('n', '<leader>5', '<Cmd>BufferGoto 5<CR>')
+keymap.set('n', '<leader>6', '<Cmd>BufferGoto 6<CR>')
+keymap.set('n', '<leader>7', '<Cmd>BufferGoto 7<CR>')
+keymap.set('n', '<leader>8', '<Cmd>BufferGoto 8<CR>')
+keymap.set('n', '<leader>9', '<Cmd>BufferGoto 9<CR>')
+keymap.set('n', '<leader>0', '<Cmd>BufferLast<CR>')
+-- Pin/unpin buffer
+--keymap.set('n', '<A-p>', '<Cmd>BufferPin<CR>')
+-- Close buffer
+keymap.set('n', '<leader>c', '<Cmd>BufferClose<CR>')
+-- Wipeout buffer
+--                 :BufferWipeout
+-- Close commands
+--                 :BufferCloseAllButCurrent
+--                 :BufferCloseAllButPinned
+--                 :BufferCloseAllButCurrentOrPinned
+--                 :BufferCloseBuffersLeft
+--                 :BufferCloseBuffersRight
+-- Magic buffer-picking mode
+keymap.set('n', '<leader>p', '<Cmd>BufferPick<CR>')
+-- Sort automatically by...
+keymap.set('n', '<leader>bb', '<Cmd>BufferOrderByBufferNumber<CR>')
+keymap.set('n', '<leader>bd', '<Cmd>BufferOrderByDirectory<CR>')
+keymap.set('n', '<leader>bl', '<Cmd>BufferOrderByLanguage<CR>')
+keymap.set('n', '<leader>bw', '<Cmd>BufferOrderByWindowNumber<CR>')
+

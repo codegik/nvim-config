@@ -1,6 +1,7 @@
 -- import nvim-treesitter plugin safely
 local status, treesitter = pcall(require, "nvim-treesitter.configs")
 if not status then
+  print("Treesitter not found!") -- print error if treesitter not installed
   return
 end
 
@@ -33,6 +34,10 @@ treesitter.setup({
     "vim",
     "dockerfile",
     "gitignore",
+    "nim",
+    "ocaml",
+    "kotlin",
+    "zig",
   },
   -- auto install above language parsers
   auto_install = true,

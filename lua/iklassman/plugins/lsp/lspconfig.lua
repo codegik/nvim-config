@@ -1,18 +1,21 @@
 -- import lspconfig plugin safely
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
+  print("Error loading lspconfig")
   return
 end
 
 -- import cmp-nvim-lsp plugin safely
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
+  print("Error loading cmp-nvim-lsp")
   return
 end
 
 -- import typescript plugin safely
 local typescript_setup, typescript = pcall(require, "typescript")
 if not typescript_setup then
+  print("Error loading typescript")
   return
 end
 
@@ -109,3 +112,5 @@ lspconfig["lua_ls"].setup({
     },
   },
 })
+
+

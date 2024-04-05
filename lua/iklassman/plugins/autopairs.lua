@@ -1,6 +1,7 @@
 -- import nvim-autopairs safely
 local autopairs_setup, autopairs = pcall(require, "nvim-autopairs")
 if not autopairs_setup then
+  print("Error trying to load nvim-autopairs")
   return
 end
 
@@ -10,19 +11,21 @@ autopairs.setup({
   ts_config = {
     lua = { "string" }, -- don't add pairs in lua string treesitter nodes
     javascript = { "template_string" }, -- don't add pairs in javscript template_string treesitter nodes
-    java = false, -- don't check treesitter on java
+    java = true, -- don't check treesitter on java
   },
 })
 
 -- import nvim-autopairs completion functionality safely
 local cmp_autopairs_setup, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
 if not cmp_autopairs_setup then
+  print("Error loading nvim-autopairs.completion.cmp")
   return
 end
 
 -- import nvim-cmp plugin safely (completions plugin)
 local cmp_setup, cmp = pcall(require, "cmp")
 if not cmp_setup then
+  print("Error trying to load cmp")
   return
 end
 
