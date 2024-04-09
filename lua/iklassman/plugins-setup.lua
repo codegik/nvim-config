@@ -72,7 +72,8 @@ return packer.startup(function(use)
 
 
   -- auto completetion
-  use("github/copilot.vim")
+  -- use("github/copilot.vim")
+  --
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-buffer")
   use("hrsh7th/cmp-path")

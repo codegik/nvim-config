@@ -71,9 +71,15 @@ keymap.set("t", "<C-j>", "<C-\\><C-N><C-w>j")
 keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k")
 keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l")
 
+-- navigate between windows
+keymap.set("n", "<C-h>", "<C-w>h")
+keymap.set("n", "<C-j>", "<C-w>j")
+keymap.set("n", "<C-k>", "<C-w>k")
+keymap.set("n", "<C-l>", "<C-w>l")
 
-
--- Tab Bar
+--------------------------
+------ Tab Bar -----------
+--------------------------
 
 -- Move to previous/next
 keymap.set('n', '<leader>h', '<Cmd>BufferPrevious<CR>')
