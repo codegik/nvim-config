@@ -45,8 +45,9 @@ saga.setup({
     edit = "<CR>",
     quit = "<C-e>"
   },
-  lightbulbs = {
-    enable = false
+  lightbulb = {
+    enable = false,
+    sign = false
   },
   ui = {
     colors = {
