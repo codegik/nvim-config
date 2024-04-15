@@ -38,7 +38,9 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
   keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
-  keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
+  keymap.set("n", "<leader>f", "<cmd>Lspsaga finder<CR>", opts)
+  keymap.set('n', '<leader>t', '<cmd>Lspsaga term_toggle<CR>', opts)
+  keymap.set('n', '<leader>o', '<cmd>Lspsaga outline<CR>', opts)
 
   -- typescript specific keymaps (e.g. rename file and update imports)
   if client.name == "tsserver" then
@@ -66,10 +68,10 @@ lspconfig["kotlin_language_server"].setup({
 })
 
 -- configure java server
--- lspconfig["java_language_server"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach,
--- })
+lspconfig["jdtls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
 
 -- configure html server
 lspconfig["html"].setup({

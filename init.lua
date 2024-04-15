@@ -1,7 +1,7 @@
 require("iklassman.plugins-setup")
 require("iklassman.plugins.lsp.mason")
-require("iklassman.plugins.lsp.lspconfig")
 require("iklassman.plugins.lsp.lspsaga")
+require("iklassman.plugins.lsp.lspconfig")
 require("iklassman.plugins.nvim-tree")
 require("iklassman.plugins.telescope")
 require("iklassman.plugins.treesitter")

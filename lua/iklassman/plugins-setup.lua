@@ -68,6 +68,7 @@ return packer.startup(function(use)
   use("MunifTanjim/nui.nvim")
   use("neovim/nvim-lspconfig")
   use("mfussenegger/nvim-dap")
+  use("nvimdev/lspsaga.nvim")
   -- use("nvim-java/nvim-java")
 
 
