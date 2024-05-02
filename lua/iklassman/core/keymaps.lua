@@ -118,3 +118,22 @@ keymap.set('n', '<leader>bd', '<Cmd>BufferOrderByDirectory<CR>')
 keymap.set('n', '<leader>bl', '<Cmd>BufferOrderByLanguage<CR>')
 keymap.set('n', '<leader>bw', '<Cmd>BufferOrderByWindowNumber<CR>')
 
+
+
+-- --------------------
+-- ---- Saga ----------
+-- --------------------
+-- keymap.set("n", "gD", "<Cmd>Lspsaga peek_definition<CR>") -- got to declaration
+-- keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>") -- see definition and make edits in window
+-- keymap.set("n", "<leader>i", "<cmd>lua require'jdtls'.organize_imports()<CR>") -- go to implementation
+-- keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>") -- see available code actions
+-- keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>") -- smart rename
+-- keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>") -- show  diagnostics for line
+-- keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>") -- show diagnostics for cursor
+-- keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>") -- jump to previous diagnostic in buffer
+-- keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>") -- jump to next diagnostic in buffer
+-- keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>") -- show documentation for what is under cursor
+-- keymap.set("n", "<leader>f", "<cmd>Lspsaga finder<CR>")
+-- keymap.set('n', '<leader>t', '<cmd>Lspsaga term_toggle<CR>')
+-- keymap.set('n', '<leader>o', '<cmd>Lspsaga outline<CR>')
+

@@ -1,3 +1,4 @@
+require("iklassman.plugins.101")
 require("iklassman.plugins-setup")
 require("iklassman.plugins.lsp.mason")
 require("iklassman.plugins.lsp.lspsaga")
