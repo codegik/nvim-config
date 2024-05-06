@@ -6,7 +6,7 @@ end
 
 
 local home = os.getenv('HOME')
-local jdtls_dir = "/opt/homebrew/Cellar/jdtls/1.34.0/libexec"
+local jdtls_dir = "/opt/homebrew/Cellar/jdtls/1.35.0/libexec"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = home .. "/.local/share/workspaces-jdtls"
 local jdtls_runnable = {"/usr/local/bin/jdtls", "/opt/homebrew/bin/jdtls"}
@@ -33,12 +33,22 @@ local config = {
       '--add-modules=ALL-SYSTEM',
       '--add-opens', 'java.base/java.util=ALL-UNNAMED',
       '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-      '-jar', jdtls_dir .. '/plugins/org.eclipse.equinox.launcher_1.6.800.v20240304-1850.jar',
+      '-jar', jdtls_dir .. '/plugins/org.eclipse.equinox.launcher_1.6.800.v20240330-1250.jar',
       '-configuration', jdtls_dir .. '/config_mac_arm',
       '-data', workspace_dir .. "/" .. project_name,
   },
-  -- cmd = { jdtls_cmd, "--jvm-arg=-javaagent:" .. workspace_dir .. "/lombok.jar", "-data", workspace_dir .. "/" .. project_name },
   root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", "mvnw", "pom.xml" }, { upward = true })[1]),
+}
+
+
+local config2 = {
+    cmd = {
+      '/opt/homebrew/bin/jdtls',
+      '-configuration ' .. home .. '/.cache/jdtls/config',
+      '-data ' .. home .. '/.cache/jdtls/workspace',
+      '-javaagent:' .. home .. '/.local/share/lib/lombok.jar',
+      '-Xbootclasspath:=' .. home .. '/.local/share/lib/lombok.jar',
+  }
 }
 
 local pkg_status, jdtls = pcall(require, "jdtls")
@@ -47,4 +57,4 @@ if not jdtls then
   return
 end
 
-jdtls.start_or_attach(config)
+jdtls.start_or_attach(config2)
