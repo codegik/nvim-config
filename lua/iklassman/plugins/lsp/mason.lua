@@ -27,14 +27,12 @@ mason_lspconfig.setup({
     "tsserver",
     "html",
     "cssls",
-    -- "tailwindcss",
     "lua_ls",
     "emmet_ls",
     "kotlin_language_server",
-    -- "java_language_server",
   },
   -- auto-install configured servers (with lspconfig)
-  automatic_installation = true, -- not the same as ensure_installed
+  automatic_installation = false, -- not the same as ensure_installed
 })
 
 mason_null_ls.setup({

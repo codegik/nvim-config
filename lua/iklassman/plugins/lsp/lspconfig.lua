@@ -66,6 +66,12 @@ lspconfig["kotlin_language_server"].setup({
   on_attach = on_attach,
 })
 
+-- configure ocaml server
+lspconfig["ocamllsp"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 -- configure java server
 lspconfig["jdtls"].setup({
   capabilities = capabilities,
@@ -92,11 +98,6 @@ lspconfig["cssls"].setup({
   on_attach = on_attach,
 })
 
--- configure tailwindcss server
--- lspconfig["tailwindcss"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach,
--- })
 
 -- configure emmet language server
 lspconfig["emmet_ls"].setup({

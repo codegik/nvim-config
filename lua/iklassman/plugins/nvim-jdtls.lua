@@ -40,6 +40,24 @@ local config = {
   root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", "mvnw", "pom.xml" }, { upward = true })[1]),
 }
 
+local config3 = {
+    cmd = {
+      home .. '/.sdkman/candidates/java/17.0.3.6.1-amzn/bin/java',
+      '-Declipse.application=org.eclipse.jdt.ls.core.id1',
+      '-Dosgi.bundles.defaultStartLevel=4',
+      '-Declipse.product=org.eclipse.jdt.ls.core.product',
+      '-Dlog.protocol=true',
+      '-Dlog.level=ALL',
+      '-Xmx1g',
+      '-javaagent:' .. home .. '/.local/share/lib/lombok.jar',
+      '--add-modules=ALL-SYSTEM',
+      '--add-opens', 'java.base/java.util=ALL-UNNAMED',
+      '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+      '-jar', jdtls_dir .. '/plugins/org.eclipse.equinox.launcher_1.6.800.v20240330-1250.jar',
+      '-configuration', jdtls_dir .. '/config_mac_arm',
+      '-data ' .. home .. '/.cache/jdtls/workspace/' .. project_name,
+  }
+}
 
 local config2 = {
     cmd = {
@@ -52,9 +70,11 @@ local config2 = {
 }
 
 local pkg_status, jdtls = pcall(require, "jdtls")
-if not jdtls then
+
+if not pkg_status then
   print("Error loading jdtls")
   return
 end
 
-jdtls.start_or_attach(config2)
+jdtls.start_or_attach(config3)
+

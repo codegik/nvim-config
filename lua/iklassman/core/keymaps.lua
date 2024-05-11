@@ -34,8 +34,17 @@ keymap.set("n", "<leader>-", ":NvimTreeResize -5<CR>") --  go to previous buffer
 keymap.set("n", "<leader>w", ":set wrap!<CR>")
 
 -- visual mode
-keymap.set("v", ">", ">gv") -- don't leave visual mode after identing
-keymap.set("v", "<", "<gv") -- don't leave visual mode after identing
+keymap.set("v", ">", ">gv") -- don't leave visual mode after indenting
+keymap.set("v", "<", "<gv") -- don't leave visual mode after indenting
+keymap.set("v", '"', 'c""<ESC>hp') -- double quotes around selected text
+keymap.set("v", '\'', "c''<ESC>hp") -- single quotes around selected text
+keymap.set("v", '(', 'c()<ESC>hp') -- parenthesis around selected text
+keymap.set("v", '{', 'c{}<ESC>hp') -- brackets around selected text
+keymap.set("v", '[', 'c[]<ESC>hp') -- square brackets around selected text
+keymap.set("v", '(', 'c()<ESC>hp') -- parenthesis around selected text
+keymap.set("v", '<', 'c<><ESC>hp') -- tag around selected text
+keymap.set("n", 'd"', 'ci"<ESC>xxP') -- remove double quotes around selected text
+-- keymap.set("n", 'da"', 'di"hPl2x') -- delete double quotes around selected text
 
 ----------------------
 -- Plugin Keybinds

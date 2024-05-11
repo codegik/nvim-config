@@ -54,10 +54,10 @@ return packer.startup(function(use)
   })
 
   -- LSP servers, DAP servers, linters, and formatters
-  -- use("williamboman/mason.nvim")
-  -- use("williamboman/mason-lspconfig.nvim")
+  use("williamboman/mason.nvim")
+  use("williamboman/mason-lspconfig.nvim")
   use("nvimtools/none-ls.nvim")
-  -- use("jay-babu/mason-null-ls.nvim")
+  use("jay-babu/mason-null-ls.nvim")
 
   -- LSP Java
   use("mfussenegger/nvim-jdtls")
