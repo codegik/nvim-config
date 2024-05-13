@@ -73,7 +73,30 @@ lspconfig["ocamllsp"].setup({
 })
 
 -- configure java server
+local home = os.getenv('HOME')
+local jdtls_dir = "/opt/homebrew/Cellar/jdtls/1.35.0/libexec"
 lspconfig["jdtls"].setup({
+  cmd = {
+    -- '/opt/homebrew/bin/jdtls',
+    home .. '/.sdkman/candidates/java/17.0.3.6.1-amzn/bin/java',
+    '-javaagent:' .. home .. '/.local/share/lib/lombok.jar',
+    '-Declipse.application=org.eclipse.jdt.ls.core.id1',
+    '-Dosgi.bundles.defaultStartLevel=4',
+    '-Dosgi.checkConfiguration=true',
+    '-Declipse.product=org.eclipse.jdt.ls.core.product',
+    '-Dosgi.sharedConfiguration.area=' .. jdtls_dir .. '/config_mac',
+    '-Dosgi.sharedConfiguration.area.readOnly=true',
+    '-Dosgi.configuration.cascaded=true',
+    '-Dlog.protocol=true',
+    '-Dlog.level=ALL',
+    '-Xmx1g',
+    '--add-modules=ALL-SYSTEM',
+    '--add-opens', 'java.base/java.util=ALL-UNNAMED',
+    '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+    '-jar', jdtls_dir .. '/plugins/org.eclipse.equinox.launcher_1.6.800.v20240330-1250.jar',
+    '-data', home .. '/.cache/jdtls/workspace',
+    '-configuration', home .. '/.cache/jdtls/config',
+  },
   capabilities = capabilities,
   on_attach = on_attach,
 })

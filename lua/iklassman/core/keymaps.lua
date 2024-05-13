@@ -34,17 +34,21 @@ keymap.set("n", "<leader>-", ":NvimTreeResize -5<CR>") --  go to previous buffer
 keymap.set("n", "<leader>w", ":set wrap!<CR>")
 
 -- visual mode
-keymap.set("v", ">", ">gv") -- don't leave visual mode after indenting
-keymap.set("v", "<", "<gv") -- don't leave visual mode after indenting
-keymap.set("v", '"', 'c""<ESC>hp') -- double quotes around selected text
+keymap.set("v", "<TAB>", ">gv") -- don't leave visual mode after indenting
+keymap.set("v", "<S-TAB>", "<gv") -- don't leave visual mode after indenting
+keymap.set({"v", "x"}, '"', 'c""<ESC>hp') -- double quotes around selected text
 keymap.set("v", '\'', "c''<ESC>hp") -- single quotes around selected text
 keymap.set("v", '(', 'c()<ESC>hp') -- parenthesis around selected text
 keymap.set("v", '{', 'c{}<ESC>hp') -- brackets around selected text
 keymap.set("v", '[', 'c[]<ESC>hp') -- square brackets around selected text
 keymap.set("v", '(', 'c()<ESC>hp') -- parenthesis around selected text
 keymap.set("v", '<', 'c<><ESC>hp') -- tag around selected text
-keymap.set("n", 'd"', 'ci"<ESC>xxP') -- remove double quotes around selected text
--- keymap.set("n", 'da"', 'di"hPl2x') -- delete double quotes around selected text
+keymap.set("n", 'd"', 'di"hPl2x') -- remove double quotes around selected text
+keymap.set("n", 'd\'', 'di\'hPl2x') -- remove single quotes around selected text
+keymap.set("n", 'd(', 'di(hPl2x') -- remove parenthesis around selected text
+keymap.set("n", 'd{', 'di{hPl2x') -- remove brackets around selected text
+keymap.set("n", 'd[', 'di[hPl2x') -- remove square brackets around selected text
+keymap.set("n", 'd<', 'di<hPl2x') -- remove tag around selected text
 
 ----------------------
 -- Plugin Keybinds
