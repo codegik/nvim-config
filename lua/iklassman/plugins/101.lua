@@ -3,28 +3,44 @@ local home = os.getenv('HOME')
 local dirName = home .. "/.local/share/101"
 local fileName = dirName .. "/names"
 
-os.execute("mkdir -p " .. dirName)
-
 local My101 = {}
 My101.historyNames = {}
 
-local historyFile = io.open(fileName, "a+");
-for name in historyFile:lines() do
-  table.insert (My101.historyNames, name);
-end
 
 My101.persist = function(names)
-  io.open(fileName, "w"):close()
-  local historyNames = io.open(fileName, "w");
-  for name in My101.historyNames do
-    historyNames:write(name .. "\n")
+  os.execute("truncate -s 0 " .. fileName)
+  for k, v in pairs(names) do
+    os.execute("echo \"" .. k .. "\" >> " .. fileName)
   end
 end
 
+
 My101.addHistory = function(name)
-  table.insert(My101.historyNames, name)
-  My101.persist(My101.historyNames)
+  if not My101.historyNames[name] then
+    My101.historyNames[name] = true
+    My101.persist(My101.historyNames)
+  end
 end
+
+
+My101.loadHistory = function()
+  os.execute("mkdir -p " .. dirName)
+  local file = io.open(fileName, "r");
+  for line in file:lines() do
+     My101.historyNames[line] = true
+  end
+  file:close()
+end
+
+
+My101.toArray = function()
+  local result = {}
+  for k, v in pairs(My101.historyNames) do
+    table.insert(result, k)
+  end
+  return result
+end
+
 
 My101.run101 = function(options)
   if (options.args ~= nil) then
@@ -38,7 +54,7 @@ My101.run101 = function(options)
 
       vim.cmd('e ' .. file)
 
-      table.insert(My101.historyNames, options.args)
+      My101.addHistory(options.args)
     end
 
     return
@@ -46,11 +62,35 @@ My101.run101 = function(options)
   print("Name parameter is missing")
 end
 
+
+My101.push = function()
+  vim.print("Synching repository")
+  local handle = io.popen(home .. "/sources/private/101s/101 push")
+
+  if (handle ~= nil) then
+    -- for line in handle:lines() do
+    --   vim.notify(line)
+    -- end
+    local result = handle:read("*a")
+    -- print(result)
+    handle:close()
+  end
+
+  vim.notify("Changes pushed")
+end
+
+
+My101.loadHistory()
+
+
 vim.api.nvim_create_user_command("One", My101.run101, {
   nargs = 1,
   complete = function(ArgLead, CmdLine, CursorPos)
-    return My101.historyNames
+    return My101.toArray()
   end,
 })
 
+vim.api.nvim_create_user_command("OnePush", My101.push, { nargs = 0 })
+
 return My101
+
