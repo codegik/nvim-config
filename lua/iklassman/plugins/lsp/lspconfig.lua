@@ -77,7 +77,6 @@ local home = os.getenv('HOME')
 local jdtls_dir = "/opt/homebrew/Cellar/jdtls/1.35.0/libexec"
 lspconfig["jdtls"].setup({
   cmd = {
-    -- '/opt/homebrew/bin/jdtls',
     home .. '/.sdkman/candidates/java/17.0.3.6.1-amzn/bin/java',
     '-javaagent:' .. home .. '/.local/share/lib/lombok.jar',
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',

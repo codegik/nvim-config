@@ -37,6 +37,7 @@ saga.setup({
   },
   finder = {
     keys = {
+      edit = "<CR>",
       quit = "<C-e>"
     }
   },
