@@ -32,6 +32,8 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "<leader>i", "<cmd>lua require'jdtls'.organize_imports()<CR>", opts) -- go to implementation
   keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
   keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
+  keymap.set("n", "<leader>rv", "<cmd>lua require'jdtls'.extract_variable()<CR>", opts) -- smart rename
+  keymap.set("v", "<leader>rv", "<cmd>lua require'jdtls'.extract_variable(true)<CR>", opts) -- smart rename
   keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
   keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
   keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer

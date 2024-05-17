@@ -61,15 +61,8 @@ return packer.startup(function(use)
 
   -- LSP Java
   use("mfussenegger/nvim-jdtls")
-  -- use("nvim-java/lua-async-await")
-  -- use("nvim-java/nvim-java-core")
-  -- use("nvim-java/nvim-java-test")
-  -- use("nvim-java/nvim-java-dap")
-  -- use("MunifTanjim/nui.nvim")
   use("neovim/nvim-lspconfig")
-  -- use("mfussenegger/nvim-dap")
   use("nvimdev/lspsaga.nvim")
-  -- use("nvim-java/nvim-java")
 
 
   -- auto completetion
@@ -84,6 +77,9 @@ return packer.startup(function(use)
   use("rafamadriz/friendly-snippets") -- useful snippets
   use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+
+  -- auto close chars
+  use("m4xshen/autoclose.nvim")
 
   -- style and icons
   use("folke/tokyonight.nvim")
