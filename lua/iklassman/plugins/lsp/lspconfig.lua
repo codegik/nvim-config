@@ -74,6 +74,14 @@ lspconfig["ocamllsp"].setup({
   on_attach = on_attach,
 })
 
+
+-- configure python server
+lspconfig["pylsp"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+
 -- configure java server
 local home = os.getenv('HOME')
 local jdtls_dir = "/opt/homebrew/Cellar/jdtls/1.35.0/libexec"

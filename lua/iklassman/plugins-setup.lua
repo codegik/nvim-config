@@ -63,6 +63,7 @@ return packer.startup(function(use)
   use("mfussenegger/nvim-jdtls")
   use("neovim/nvim-lspconfig")
   use("nvimdev/lspsaga.nvim")
+  use("mfussenegger/nvim-dap")
 
 
   -- auto completetion
