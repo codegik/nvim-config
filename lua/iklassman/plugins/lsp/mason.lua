@@ -31,7 +31,7 @@ mason_lspconfig.setup({
     "emmet_ls",
     "kotlin_language_server",
     "pylsp",
-    "ocamllsp"
+    "ocamllsp",
   },
   -- auto-install configured servers (with lspconfig)
   automatic_installation = false, -- not the same as ensure_installed
