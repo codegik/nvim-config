@@ -64,7 +64,9 @@ return packer.startup(function(use)
   use("neovim/nvim-lspconfig")
   use("nvimdev/lspsaga.nvim")
   use("mfussenegger/nvim-dap")
-
+  use("Mgenuit/nvim-dap-kotlin")
+  use("nvim-neotest/nvim-nio")
+  use({"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}})
 
   -- auto completetion
   -- use("github/copilot.vim")
