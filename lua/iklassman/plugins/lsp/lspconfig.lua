@@ -84,7 +84,7 @@ lspconfig["pylsp"].setup({
 
 -- configure java server
 local home = os.getenv('HOME')
-local jdtls_dir = "/opt/homebrew/Cellar/jdtls/1.35.0/libexec"
+local jdtls_dir = "/opt/homebrew/Cellar/jdtls/1.36.0/libexec"
 lspconfig["jdtls"].setup({
   cmd = {
     home .. '/.sdkman/candidates/java/17.0.3.6.1-amzn/bin/java',
@@ -102,7 +102,7 @@ lspconfig["jdtls"].setup({
     '--add-modules=ALL-SYSTEM',
     '--add-opens', 'java.base/java.util=ALL-UNNAMED',
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-    '-jar', jdtls_dir .. '/plugins/org.eclipse.equinox.launcher_1.6.800.v20240330-1250.jar',
+    '-jar', jdtls_dir .. '/plugins/org.eclipse.equinox.launcher_1.6.800.v20240513-1750.jar',
     '-data', home .. '/.cache/jdtls/workspace',
     '-configuration', home .. '/.cache/jdtls/config',
   },
