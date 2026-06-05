@@ -15,8 +15,9 @@ return {
           end
         end
       end
+      metals_config.settings = metals_config.settings or {}
+      metals_config.settings.serverVersion = "1.6.7"
       if jdk21 then
-        metals_config.settings = metals_config.settings or {}
         metals_config.settings.javaHome = jdk21
       end
       return metals_config
