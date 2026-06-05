@@ -1,0 +1,11 @@
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
+
+# Machine-specific: Omarchy theme symlink (Linux only). Each machine provides its own.
+/lua/plugins/theme.lua
