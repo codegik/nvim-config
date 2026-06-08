@@ -1,7 +1,6 @@
 return {
   {
     "codegik/claude-chat.nvim",
-    dev = true, -- use the local copy in ~/sources/codegik (see config/lazy.lua dev.path)
     cmd = { "ClaudeChat", "ClaudeChatReset", "ClaudeChatFile" },
     keys = {
       { "<leader>ai", "<cmd>ClaudeChat<cr>", desc = "Claude Chat" },
