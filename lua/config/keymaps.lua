@@ -3,3 +3,7 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("n", "<leader>;", ":set wrap!<CR>")
+vim.keymap.set("n", "<M-Down>", ":resize +2<CR>", { silent = true })
+vim.keymap.set("n", "<M-Up>", ":resize -2<CR>", { silent = true })
+vim.keymap.set("n", "<M-Right>", ":vertical resize -2<CR>", { silent = true })
+vim.keymap.set("n", "<M-Left>", ":vertical resize +2<CR>", { silent = true })
